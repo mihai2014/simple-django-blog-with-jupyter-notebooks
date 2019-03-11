@@ -8,7 +8,6 @@ from lxml import html, etree
 class verifyLinks(TestCase):
 
     def setUp(self):
-        pass
         c = Client()
         response = c.get('/site_map')
         #print(response.content)        
@@ -19,11 +18,13 @@ class verifyLinks(TestCase):
 
         self.n = 0
         self.problems = []
-        
+        self.total = 0
+                
         #create HtmlElement instance
         doc = html.fromstring(response.content)
         anchors = doc.xpath('//a')
         for anchor in anchors:
+            self.total += 1
             try:
                 link = anchor.get('href')
                 #print(link)
@@ -40,6 +41,8 @@ class verifyLinks(TestCase):
         
 
     def test_links(self):
+
+        print("Verified {} links".format(self.total))
 
         if(self.n != 0):
             print("\nFailed links:")

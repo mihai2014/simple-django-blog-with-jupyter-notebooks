@@ -11,4 +11,10 @@ There are two formats:
 
 Javascript notebook dependence could be loaded from local (blog/static/blog/js/MathJax must be created) by setting LOCAL_NOTEBOOK = True in views.py
 
+Start:
+python manage.py runserver
+or
+./go.sh
 
+Test that all anchor links defined get valid responses (no server error or 404)
+python manage.py test
