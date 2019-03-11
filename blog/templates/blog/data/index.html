@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block tags %}
+<title>Mysite</title>
+<meta name="keywords" content="django site">
+{% endblock %}
+
+
+{% block content %}
+
+<center><b>My Django site</b></center>
+
+<br>
+
+
+<p><i>Subject 1</i></p>
+
+<a name="Subject2">
+<p>
+  <div class="card">
+    <div class="card-header">Subject1</div>
+    <div class="card-body">
+        <li><a href='/demo1/example1.html'>Example1</a></li>
+    </div>
+  </div>
+</p>
+
+
+<p><i>Subject 2</i></p>
+
+<a name="Subject2">
+<p>
+  <div class="card">
+    <div class="card-header">Subject2</div>
+    <div class="card-body">
+        <li><a href='/demo2/example2.htm'>Example2</a></li>
+    </div>
+  </div>
+</p>
+
+
+{% endblock %}

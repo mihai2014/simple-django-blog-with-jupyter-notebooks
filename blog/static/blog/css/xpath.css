@@ -1,0 +1,15 @@
+.select{
+    color:red;
+    font-weight:bold;
+}
+p {
+    color:blue;
+    font-weight:bold;
+}
+.codejs{
+    background-color: #B2FFF0;
+    padding-left: 10px;
+    color: #993300;
+    overflow:auto;
+}
+

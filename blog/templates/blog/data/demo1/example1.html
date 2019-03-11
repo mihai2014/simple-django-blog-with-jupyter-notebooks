@@ -1,0 +1,57 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block tags %}
+<title>Example1</title>
+<meta name="keywords" content="example1 code prettyfied">
+{% endblock %}
+
+{% block content %}
+
+<p>Javascript code:</p>
+
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Strings&lt;/h2&gt;
+
+&lt;p&gt;Strings can be written with double or single quotes.&lt;/p&gt;
+
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;demo&quot;).innerHTML = 'John Doe';
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>Python code</p>
+
+<pre class="prettyprint">
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def f(t):
+    'A damped exponential'
+    s1 = np.cos(2 * np.pi * t)
+    e1 = np.exp(-t)
+    return s1 * e1
+
+
+t1 = np.arange(0.0, 5.0, .2)
+
+l = plt.plot(t1, f(t1), 'ro')
+plt.setp(l, markersize=30)
+plt.setp(l, markerfacecolor='C0')
+
+plt.show()
+</pre>
+
+{% endblock %}

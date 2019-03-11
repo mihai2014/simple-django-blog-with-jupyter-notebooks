@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block tags %}
+  {% autoescape off %}
+    {{ tags }}
+  {% endautoescape %}
+{% endblock %}
+
+{% block content %}
+
+  {% autoescape off %}
+    {{ content }}
+  {% endautoescape %}
+
+    <script>
+
+    window.onload = function() {
+        PR.prettyPrint();
+    }
+
+    </script>
+
+{% endblock %}
+
