@@ -155,17 +155,20 @@ def detail(request):
     return HttpResponse("not found")
     #raise Http404("not found")
 
-#remove raw "notebooks" from site map
-#when list include file.htm and file.html, keep only file.htm
-#remove css, txt
+#except from site map: "raw" noteboks, css, txt, ipynb
+#and when list include file.htm and file.html- keep only file.htm
 def filterList(listOfDirs):
     #print(listOfDirs)
 
     for item1 in listOfDirs:
         for item2 in listOfDirs:
+            #print(item1,item2)
             if(item1 == item2+"l"):
-                #print(item2)
+                #print(item2,"match")
                 listOfDirs.remove(item1)
+            if(item2 == item1+"l"):
+                #print(item1,"match")
+                listOfDirs.remove(item2)
 
     #for item in listOfDirs:
     #    if (re.findall(".*.html?",item) == []):
@@ -180,6 +183,9 @@ def filterList(listOfDirs):
         if (re.findall(".*.txt",item) != []):
             listOfDirs.remove(item)
 
+    for item in listOfDirs:
+        if (re.findall(".*.ipynb",item) != []):
+            listOfDirs.remove(item)
 
     return listOfDirs
 
